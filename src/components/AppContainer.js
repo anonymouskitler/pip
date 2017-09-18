@@ -1,9 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {
-  testNow,
-  submitLeadForm
-} from '../wit/actionCreators/actionCreators.js';
+import { testNow, submitLeadForm } from '../wit/actionCreators/actionCreators.js';
 import LeadLists from './LeadLists';
 import LeadForm from './LeadForm';
 import { Grid, Container } from 'semantic-ui-react';

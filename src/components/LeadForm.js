@@ -4,12 +4,9 @@ import { Field, reduxForm, reset } from 'redux-form';
 import { connect } from 'react-redux';
 import { submitLeadForm } from '../wit/actionCreators/actionCreators';
 
-const renderTextField = ({
-  input,
-  label,
-  meta: { touched, error },
-  ...custom
-}) => <Form.Input placeholder={label} name={label} {...input} />;
+const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) => (
+  <Form.Input placeholder={label} name={label} {...input} />
+);
 
 class LeadForm extends React.Component {
   render() {
@@ -21,45 +18,26 @@ class LeadForm extends React.Component {
           <div>
             <label>Name</label>
             <div>
-              <Field
-                name="name"
-                component={renderTextField}
-                type="text"
-                placeholder="Name"
-              />
+              <Field name="name" component={renderTextField} type="text" placeholder="Name" />
             </div>
           </div>
           <div>
             <label>Phone number</label>
             <div>
-              <Field
-                name="phone"
-                component={renderTextField}
-                type="text"
-                placeholder="Phone"
-              />
+              <Field name="phone" component={renderTextField} type="text" placeholder="Phone" />
             </div>
           </div>
           <div>
             <label>Email</label>
             <div>
-              <Field
-                name="email"
-                component={renderTextField}
-                type="email"
-                placeholder="Email"
-              />
+              <Field name="email" component={renderTextField} type="email" placeholder="Email" />
             </div>
           </div>
           <div>
             <Button type="submit" disabled={pristine || submitting}>
               Submit
             </Button>
-            <Button
-              type="button"
-              disabled={pristine || submitting}
-              onClick={reset}
-            >
+            <Button type="button" disabled={pristine || submitting} onClick={reset}>
               Clear Values
             </Button>
           </div>
